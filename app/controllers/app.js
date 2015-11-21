@@ -7,7 +7,7 @@ exports.authenticateRequest = function(req, res, next){
 	var uid = req.headers["user"];
 
 	if (typeof auth_token !== 'undefined' && typeof uid !== 'undefined' ) {
-        User.findOne({'_id':new ObjectId('564e313d95375172780d6010'), 'token':auth_token}).exec(
+        User.findOne({'_id':new ObjectId(uid), 'token':auth_token}).exec(
         	function(err, user){
         		if(err){
         			res.send(500);

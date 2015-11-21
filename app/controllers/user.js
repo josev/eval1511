@@ -25,7 +25,6 @@ exports.registerUser = function(req, res, next){
 
 exports.loginUser = function(req, res, next){
 	var loginModel = new UserLogin(req.body);
-	console.log("MODEL OF LOGIN :: " + loginModel);
 	if(loginModel.email==null){
 		res.status(400);
 		res.json({

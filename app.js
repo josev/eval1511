@@ -35,6 +35,7 @@ server.use(restify.bodyParser());
 server.post("/users/register",  controllers.user.registerUser);
 server.post("/users/login", controllers.user.loginUser);
 server.post("/users/logout", controllers.app.authenticateRequest, controllers.user.logoutUser);
+server.get("/places/nearby", controllers.app.authenticateRequest, controllers.place.findNearby);
 
 
 server.listen(port, ip_address, function(){
